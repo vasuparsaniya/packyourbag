@@ -6,6 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.packyourbag.Dao.ItemsDao;
 import com.example.packyourbag.Models.Items;
 
 @Database(entities = Items.class, version = 1, exportSchema = false)
@@ -23,5 +24,7 @@ public abstract class RoomDB extends RoomDatabase {
         }
         return database;
     }
+
+    public abstract ItemsDao mainDao();
 
 }
