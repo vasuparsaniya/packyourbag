@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
 
         database = RoomDB.getInstance(this);
-        AppData appData = new AppData(database);
+        AppData appData = new AppData(database,this);
         int last = prefs.getInt(AppData.LAST_VERSION,0);
         if(!prefs.getBoolean(MyConstants.FIRST_TIME_CAMEL_CASE,false)){
             appData.persistAllData();

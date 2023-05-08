@@ -21,6 +21,7 @@ import com.example.packyourbag.Models.Items;
 import com.example.packyourbag.R;
 import com.google.android.material.transition.Hold;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CheckListAdapter extends RecyclerView.Adapter<CheckListViewHolder> {
@@ -43,11 +44,10 @@ public class CheckListAdapter extends RecyclerView.Adapter<CheckListViewHolder> 
         if (MyConstants.FALSE_STRING.equals(show)) {
             this.itemList = database.mainDao().getAllSelected(true);
         } else {
-            this.itemList = itemList;
+            this.itemList = new ArrayList<>(itemList);
         }
-
         if(itemList.size() == 0){
-            Toast.makeText(context.getApplicationContext(),"Nothing to show", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context.getApplicationContext(),"Nothing to show", Toast.LENGTH_SHORT).show();
         }
     }
 

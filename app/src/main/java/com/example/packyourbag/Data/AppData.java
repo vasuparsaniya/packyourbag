@@ -21,8 +21,8 @@ public class AppData extends Application {
     public static final String LAST_VERSION = "LAST_VERSION";
     public static final int NEW_VERSION = 1;
 
-    public AppData(RoomDB databse) {
-        this.database = databse;
+    public AppData(RoomDB database, Context context) {
+        this.database = database;
         this.context = context;
     }
 
@@ -123,6 +123,7 @@ public class AppData extends Application {
         listOfAllItems.add(getClothingData());
         listOfAllItems.add(getBabyNeedsData());
         listOfAllItems.add(getHealthData());
+        listOfAllItems.add(getTechnologyData());
         listOfAllItems.add(getFoodData());
         listOfAllItems.add(getBeachSuppliesData());
         listOfAllItems.add(getCarSuppliesData());
@@ -150,14 +151,14 @@ public class AppData extends Application {
                 for (Items item : list) {
                     database.mainDao().saveItem(item);
                 }
-                Toast.makeText(this, category + " Reset Successfully.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, category + " Reset Successfully.", Toast.LENGTH_SHORT).show();
 
             } else {
-                Toast.makeText(this, category + " Reset Successfully.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, category + " Reset Successfully.", Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {
-            Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Something Went Wrong", Toast.LENGTH_SHORT).show();
         }
     }
 

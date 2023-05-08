@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/app_icon_two"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtAppName"
+        android:layout_below="@id/appIcon"
+        android:layout_centerInParent="true"
+        android:textColor="@color/black"
+        android:text="Pack Your Bag"
+        android:textSize="45dp"
+        android:textStyle="bold|italic"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="from"
+        android:layout_marginTop="70dp"
+        android:layout_below="@id/txtAppName"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:id="@+id/txtFrom"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtVasuParsaniya"
+        android:layout_below="@id/txtFrom"
+        android:text="Vasu Parsaniya"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
