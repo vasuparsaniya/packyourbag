@@ -29,7 +29,7 @@ public interface ItemsDao {
     void checkUncheck(int id, boolean checked);
 
     @Query("select count(*) from items")
-    Intent getItemsCount();
+    Integer getItemsCount();
 
     @Query("delete from items where addedby=:addedBy")
     Integer deleteAllSystemItems(String addedBy);

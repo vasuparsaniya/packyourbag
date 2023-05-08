@@ -18,33 +18,39 @@ public class AppData extends Application {
     Context context;
 
     public static final String LAST_VERSION="LAST_VERSION";
-    public static final int NEW_VERSION = 3;
+    public static final int NEW_VERSION = 1;
 
     public AppData(RoomDB databse) {
         this.database = databse;
         this.context = context;
     }
 
+//    public List<Items> getBasicData(){
+//        category = "Basic Needs";
+//        List<Items> basicItem = new ArrayList<>();
+//
+//        basicItem.add(new Items("Visa",category,false));
+//        basicItem.add(new Items("Passport",category,false));
+//        basicItem.add(new Items("Adharcard",category,false));
+//        basicItem.add(new Items("Wallet",category,false));
+//        basicItem.add(new Items("Driving License",category,false));
+//        basicItem.add(new Items("Currency",category,false));
+//        basicItem.add(new Items("House Key",category,false));
+//        basicItem.add(new Items("Book",category,false));
+//        basicItem.add(new Items("Travel Pillow",category,false));
+//        basicItem.add(new Items("Eye Patch",category,false));
+//        basicItem.add(new Items("Umbrella",category,false));
+//        basicItem.add(new Items("Note book",category,false));
+//
+//        return basicItem;
+//    }
+
+
     public List<Items> getBasicData(){
-        category = "Basic Needs";
-        List<Items> basicItem = new ArrayList<>();
-
-        basicItem.add(new Items("Visa",category,false));
-        basicItem.add(new Items("Passport",category,false));
-        basicItem.add(new Items("Adharcard",category,false));
-        basicItem.add(new Items("Wallet",category,false));
-        basicItem.add(new Items("Driving License",category,false));
-        basicItem.add(new Items("Currency",category,false));
-        basicItem.add(new Items("House Key",category,false));
-        basicItem.add(new Items("Book",category,false));
-        basicItem.add(new Items("Travel Pillow",category,false));
-        basicItem.add(new Items("Eye Patch",category,false));
-        basicItem.add(new Items("umbrella",category,false));
-        basicItem.add(new Items("Note book",category,false));
-
-        return basicItem;
+        String[] data = {"Visa","Passport","Adharcard","Wallet","Driving","Currency","House Key","Book","Travel Pillow",
+                "Eye Patch","Umbrella","Note book"};
+        return prepareItemsList(MyConstants.BASIC_NEEDS_CAMEL_CASE, data);
     }
-
 
     public List<Items> getPersonalCareData(){
         String[] data = {"Tooth-Brush","Tooth-paste","Floss","Mouthwash","Shaving Cream","Razor Blade","Hair Clip","Moisturizer","Contact Lens",
